@@ -1,0 +1,169 @@
+---
+
+//Icons
+
+import IconLinkedin from '../components/icons/IconLinkedin.astro'
+import IconGitHub from '../components/icons/IconGitHub.astro'
+import IconGmail from '../components/icons/IconGmail.astro'
+import IconAngular from '../components/icons/IconAngular.astro'
+import IconCSS from '../components/icons/IconCSS.astro'
+import IconHTML from '../components/icons/IconHTML.astro'
+import IconTailwind from '../components/icons/IconTailwind.astro'
+import IconPython from '../components/icons/IconPython.astro'
+import IconDjango from '../components/icons/IconDjango.astro'
+import IconJava from '../components/icons/IconJava.astro'
+import IconJavaScript from '../components/icons/IconJavaScript.astro'
+import IconSqlServer from '../components/icons/IconSqlServer.astro'
+import IconWhatsApp from '../components/icons/IconWhatsApp.astro'
+import IconIllustrator from '../components/icons/IconIllustrator.astro'
+import IconC from '../components/icons/IconC.astro'
+import IconDotNet from '../components/icons/IconDotNet.astro'
+import IconPostgreSQL from '../components/icons/IconPostgreSQL.astro'
+import IconMySql from '../components/icons/IconMySQL.astro'
+import IconMongoDB from '../components/icons/IconMongoDB.astro'
+
+
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import WorkExperience from '../components/WorkExperience.astro';
+import Projects from '../components/Projects.astro';
+import Header from '../components/Header.astro';
+
+const ICONS = {
+	GMAIL: { icon: IconGmail },
+	LINKEDIN: {icon: IconLinkedin},
+	ILLUSTRATOR: {icon: IconIllustrator},
+	GITHUB: {icon:IconGitHub},
+	ANGULAR: {icon:IconAngular},
+	JAVA: {icon:IconJava},
+	JAVASCRIPT: {icon:IconJavaScript},
+	SQLSERVER: {icon:IconSqlServer},
+	PYTHON:{icon:IconPython},
+	DJANGO:{icon:IconDjango},
+	HTML:{icon:IconHTML},
+	CSS:{icon:IconCSS},
+	TAILWIND:{icon:IconTailwind},
+	WHATSAPP:{icon:IconWhatsApp},
+	C:{icon:IconC},
+	dotNET:{icon:IconDotNet},
+	POSTGRESQL:{icon:IconPostgreSQL},
+	MYSQL:{icon:IconMySql},
+	MONGODB:{icon:IconMongoDB}
+}
+
+---
+
+<Layout title="Portfolio - Juan Shinka">
+	<main id="Home">
+
+		<section class="border rounded mt-20 m-5 p-2 flex flex-col shadow-lg">
+
+			<div class="flex justify-center">
+				<div class="flex flex-col text-center gap-3 ">
+					<span class="dark:text-white"> Hola! Soy</span>
+					<span class="text-4xl dark:text-white"> Juan Shinka Mendez</span>
+					<span class="text-xl dark:text-gray-200"> Desarrollador Full Stack</span>	
+					
+					<img class="rounded-full size-64 m-auto" src="/dev.jpg"/>
+					<p class="mx-auto w-full md:w-1/2 dark:text-gray-400">
+						Experiencia de mas de 3 años desarrollando. Gracias a mis estudios en 
+					   la universidad como tambien a mi experiencia profesional, estoy en condiciones 
+					   de crear aplicaciones web y hasta soluciones de backend robustas.
+					</p>
+				</div>
+			</div>
+		
+		</section>
+
+		<section class="border rounded mt-24 m-5 p-2 flex flex-col gap-3 shadow-lg">
+			<h1 class="text-center text-3xl mb-6 dark:text-white"> EXPERIENCIA PROFESIONAL </h1>
+				<WorkExperience
+					name ="Newsan"
+					ubication = "Ushuaia, Argentina"
+					cargo = "Full Stack Developer"
+					description =  "En estos 2 años trabajando en el sector de programación industrial, utilizando Angular como frontend, .NET Core 5 como backend y utilizando SQL server como base de datos, realice diseño e implementación de distintos módulos dentro de la plataforma interna que tiene la empresa. Asimismo quiero destacar la dinámica y autogestión para diseñar estos proyectos, ya que para desarrollar los módulos, realice una serie de entrevistas para conocer el contexto de cada área solicitante e identificar los requerimientos funcionales					que precisaban."
+					years = "Feb/22 - Dic/23"
+					stack={[ICONS.ANGULAR, ICONS.dotNET, ICONS.SQLSERVER]}
+				/>
+		</section>
+
+		<section id="Projects" class="border rounded mt-24 m-5 p-2 flex flex-col gap-3 shadow-lg">
+			<h1 class="text-center text-3xl mb-6 dark:text-white"> PROYECTOS </h1>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+				<Projects 
+					title='Sistema Academico'
+					description="Esta es una aplicacion de escritorio que sirve para administrar la información académica de una universidad, crear alumnos, carreras, materias, inscribirse, cursar, asignar notas, etc. Realizado completamente con JAVA para el final de la materia programación orientada a objetos."
+					github="https://github.com/juanshink/sistemaAcademico"
+					image="/proyecto-sistemaacademico.jpg"
+					stack={[ICONS.JAVA]}
+				/>
+				<Projects 
+					title='Tetris'
+					description="Este es un proyecto del clasico y famoso juego 'tetris' realizado 100% con JavaScript con el fin de fortalecer mi conocimiento en este lenguaje tan utilizado."
+					link="https://tetrisbyjuanshinka.netlify.app/"
+					github="https://github.com/juanshink/tetris"
+					image="/proyecto-tetris.jpg"
+					stack={[ICONS.JAVASCRIPT]}
+				/>
+				<Projects 
+					title='Juego de Logica'
+					description="Juego de logica realizado con Angular 14 y Tailwind. Probalo!."
+					link="https://puzzle-rho.vercel.app/"
+					github="https://github.com/juanshink/puzzle"
+					image="/logicgameproyect.jpg"
+					stack={[ICONS.ANGULAR, ICONS.TAILWIND]}
+				/>
+			</div>
+		</section>
+
+		<section class="relative border rounded mt-24 m-5 p-2 flex flex-col gap-3 shadow-lg">
+			<h1 class="text-center text-3xl mb-6 dark:text-white"> HABILIDADES Y TECNOLOGIAS </h1>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+				
+				<Card
+				title="FrontEnd"
+				body="Tengo un dominio sólido de las tecnologías clave como JavaScript, HTML y CSS. Mi enfoque se centra en la creación de interfaces atractivas y funcionales, para garantizar una experiencia de usuario excepcional."
+				icons={[ICONS.HTML, ICONS.CSS, ICONS.JAVASCRIPT, ICONS.ANGULAR, ICONS.TAILWIND, ICONS.ILLUSTRATOR]}
+				/>
+
+				<Card
+				title="BackEnd"
+				body="Esta área del desarrollo es mi caballito de guerra, ya que tengo una gran experiencia con C# y .NET. Me destaco en la creación de lógica de servidor robusta y escalable, lo que me permite desarrollar soluciones confiables y eficientes."
+				icons={[ICONS.C, ICONS.dotNET, ICONS.JAVA, ICONS.PYTHON, ICONS.DJANGO]}
+				/>
+
+				<Card
+				title="DataBases"
+				body="Cuento con experiencia en el diseño y la gestión de bases de datos relacionales y no relacionales. Garantizo un almacenamiento y recuperación de datos eficaz para respaldar las necesidades del sistema."
+				icons={[ICONS.SQLSERVER, ICONS.POSTGRESQL, ICONS.MYSQL, ICONS.MONGODB]}
+				/>
+		</div>
+		</section>
+
+		<section id="Contact" class="border rounded mt-24 m-5 p-2 flex flex-col shadow-lg">
+			
+			<div class="flex flex-col gap-20">
+				<h1 class="text-center text-3xl mb-6 dark:text-white"> CONTACTO </h1>
+				
+				<div class="text-center flex flex-col gap-10">
+					<p class="mx-auto w-full md:w-1/2 dark:text-gray-400">
+						Gracias por visitar mi portfolio.
+					</p>
+					<p class="mx-auto w-full md:w-1/2 dark:text-gray-400">
+						Si estás interesado en mi trabajo o queres colaborar en un proyecto, estaré encantado de escucharte. 
+						Podes contactarme a través de los siguientes medios
+					</p>
+				</div>
+
+				<div>
+					<ul class="flex justify-center gap-10 mb-20">
+						<a class="hover:transition-transform duration-300 transform hover:scale-105" href="mailto:juanshinkamendez@gmail.com" target="_blank"><ICONS.GMAIL.icon class="size-12"></a>
+						<a class="hover:transition-transform duration-300 transform hover:scale-105" href="https://wa.me/5492901652755" target="_blank"><ICONS.WHATSAPP.icon class="size-12"></a>
+					</ul>
+				</div>
+			</div>
+
+		</section>
+		
+	</main>
+</Layout>

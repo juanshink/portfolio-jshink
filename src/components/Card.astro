@@ -1,0 +1,24 @@
+---
+interface Props {
+	title: string;
+	body: string;
+	icons: any[]
+}
+
+const { icons, title, body } = Astro.props;
+---
+
+<div class="border rounded bg-gray-200 dark:bg-gray-800 shadow-lg">
+		<h2 class="text-center text-xl m-2 dark:text-white">
+			{title}
+		</h2>
+		<p class="m-5 dark:text-gray-200">
+			{body}
+		</p>
+		<hr class="m-2">
+		<div class="m-5 flex flex-wrap justify-around">
+			{icons.map((item) => (
+                    <item.icon class="size-10 m-2"></item.icon>
+                ))}
+		</div>
+</div>

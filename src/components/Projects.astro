@@ -1,0 +1,44 @@
+---
+
+interface Props {
+	title: string;
+	description: string;
+    link?: string;
+	github: string;
+    image: string;
+    stack: any[]
+}
+
+const { title, description, link, github, image, stack} = Astro.props;
+---
+
+<div class="bg-gray-200 rounded-md dark:bg-gray-800">
+    <div class="pl-11 pr-11 pb-5 pt-5">
+        <div class="flex flex-col items-center">
+            <h1 class="text-xl dark:text-white">{title}</h1>
+            <img src={image} class="flex"/>
+        </div>
+        <div class="flex flex-col gap-y-4 mt-4">
+            <p class="text-pretty dark:text-gray-200">{description}</p>
+            <ul class="flex gap-x-3">
+                <p class="dark:text-white">Tecnologias aplicadas</p>
+                {stack.map((item) => (
+                <li>
+                    <item.icon class="size-5"></item.icon>
+                    </li>
+                    ))}
+            </ul>
+            <div class="flex gap-x-2">
+                {link && (  // si link es distinto de null o undefined
+                    <a href={link} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-800" target="_blank">
+                        Sitio Web
+                    </a>
+                )} 
+                <a href={github} class="bg-gray-800 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-gray active:bg-gray-700" target="_blank">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+

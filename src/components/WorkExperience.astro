@@ -1,0 +1,36 @@
+---
+
+interface Props {
+	name: string;
+	ubication: string;
+    cargo: string;
+	description: string;
+    years: string;
+    stack: any[]
+}
+
+const { name, ubication, cargo, description, years, stack } = Astro.props;
+
+---
+
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">                  
+    <li class="mb-10 ms-4 flex flex-col gap-2">
+        <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+            {years}</time>
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            {cargo} - {name}</h3>
+        <ul class="flex gap-x-3">
+            {stack.map((item) => (
+                <li>
+                    <item.icon class="size-8"></item.icon>
+                </li>
+            ))}
+        </ul>
+        <h6 class="opacity-65 text-sm dark:text-white"> {ubication}</h6>
+        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 mt-2">
+            {description}</p>
+            
+    </li>
+</ol>
