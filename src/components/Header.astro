@@ -47,20 +47,31 @@ import IconLinkedin from './icons/IconLinkedin.astro'
 
 <script>
 const darkModeButton = document.getElementById('darkmode');
+const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-darkModeButton?.addEventListener('click', () => {
+document.documentElement.classList.toggle('dark', prefersDarkMode);
 
-    document.documentElement.classList.toggle('dark');
+const moonIcon = document.querySelector('.moon-icon');
+const sunIcon = document.querySelector('.sun-icon');
 
-    const moonIcon = document.querySelector('.moon-icon');
-    const sunIcon = document.querySelector('.sun-icon');
-
-    if (document.documentElement.classList.contains('dark')) {
+if (prefersDarkMode) {
     moonIcon?.classList.add('hidden');
     sunIcon?.classList.remove('hidden');
-    } else {
+} else {
     moonIcon?.classList.remove('hidden');
     sunIcon?.classList.add('hidden');
+}
+
+darkModeButton?.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+
+    if (document.documentElement.classList.contains('dark')) {
+        moonIcon?.classList.add('hidden');
+        sunIcon?.classList.remove('hidden');
+    } else {
+        moonIcon?.classList.remove('hidden');
+        sunIcon?.classList.add('hidden');
     }
 });
+
 </script>
